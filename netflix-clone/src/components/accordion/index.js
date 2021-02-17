@@ -5,6 +5,7 @@ const ToggleContext = createContext();
 
 export default function Accordion({ children, ...restProps }) {
   return (
+    // Container for the new section
     <Container {...restProps}>
       <Inner>{children}</Inner>
     </Container>
