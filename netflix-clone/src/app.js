@@ -6,7 +6,6 @@ import { useAuthListener } from "./hooks";
 
 export default function App() {
   const { user } = useAuthListener();
-  console.log(user);
 
   return (
     <Router>
@@ -19,13 +18,13 @@ export default function App() {
           <SignUp />
         </IsUserRedirect>
 
-        <IsUserRedirect user={user} loggedInPath={ROUTES.BROWSE} path={ROUTES.HOME}>
-          <Home />
-        </IsUserRedirect>
-
         <ProtectedRoute user={user} path={ROUTES.BROWSE}>
           <Browse />
         </ProtectedRoute>
+
+        <IsUserRedirect user={user} loggedInPath={ROUTES.BROWSE} path={ROUTES.HOME}>
+          <Home />
+        </IsUserRedirect>
       </Switch>
     </Router>
   );

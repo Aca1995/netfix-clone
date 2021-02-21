@@ -1,3 +1,8 @@
+import { useContent } from "../hooks";
+
 export default function Browse() {
-  return <p>Hello from the browse!</p>;
+  const { series } = useContent("series");
+  const { films } = useContent("films");
+
+  return <p>Hello</p>;
 }
