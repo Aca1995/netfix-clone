@@ -6,6 +6,7 @@ import {
   Picture,
   Link,
   Profile,
+  Dropdown,
   FeatureCallOut,
   ButtonLink,
   PlayButton,
@@ -24,6 +25,10 @@ Header.Frame = function HeaderFrame({ children, ...restProps }) {
 
 Header.Group = function HeaderGroup({ children, ...restProps }) {
   return <Group {...restProps}>{children}</Group>;
+};
+
+Header.Profile = function HeaderProfile({ children, ...restProps }) {
+  return <Profile {...restProps}>{children}</Profile>;
 };
 
 Header.Logo = function HeaderLogo({ to, ...restProps }) {
@@ -60,4 +65,8 @@ Header.FeatureCallOut = function HeaderFeatureCallOut({ children, ...restProps }
 
 Header.Text = function HeaderText({ children, ...restProps }) {
   return <Text {...restProps}>{children}</Text>;
+};
+
+Header.Dropdown = function HeaderDropdown({ children, ...restProps }) {
+  return <Dropdown {...restProps}>{children}</Dropdown>;
 };
