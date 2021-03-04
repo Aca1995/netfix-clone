@@ -12,6 +12,7 @@ export function BrowseContainer({ slides }) {
   const [profile, setProfile] = useState({});
   const [loading, setLoading] = useState(true);
   const [category, setCategory] = useState("series");
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     setTimeout(() => {
@@ -42,6 +43,7 @@ export function BrowseContainer({ slides }) {
             </Header.TextLink>
           </Header.Group>
           <Header.Group>
+            <Header.Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
             <Header.Profile>
               <Header.Picture src={user.photoURL} />
               <Header.Dropdown>
