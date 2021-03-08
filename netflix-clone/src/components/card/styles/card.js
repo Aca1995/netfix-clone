@@ -13,7 +13,7 @@ export const Container = styled.div``;
 
 export const Group = styled.div``;
 
-export const Subtitle = styled.p``;
+export const SubTitle = styled.p``;
 
 export const Text = styled.p``;
 

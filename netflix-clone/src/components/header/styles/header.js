@@ -36,6 +36,7 @@ export const Link = styled.p`
   color: #fff;
   text-decoration: none;
   margin-right: 30px;
+  /* Links for categories (series or films) */
   font-weight: ${({ active }) => (active === "true" ? "700" : "normal")};
   cursor: pointer;
   &:hover {
