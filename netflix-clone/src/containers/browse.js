@@ -1,4 +1,5 @@
 import { useState, useEffect, useContext } from "react";
+import Fuse from "fuse.js";
 import * as ROUTES from "../constants/routes";
 import { SelectProfileContainer } from "./profiles";
 import { FooterContainer } from "./footer";
@@ -27,6 +28,20 @@ export function BrowseContainer({ slides }) {
   useEffect(() => {
     setSlideRows(slides[category]);
   }, [slides, category]);
+
+  useEffect(() => {
+    const fuse = new Fuse(slideRows, {
+      keys: ["data.description", "data.title", "data.genre"],
+    });
+
+    const results = fuse.search(searchTerm).map(({ item }) => item);
+
+    if (slideRows.length > 0 && searchTerm.length > 3 && results.length > 0) {
+      setSlideRows(results);
+    } else {
+      setSlideRows(slides[category]);
+    }
+  }, [searchTerm]);
 
   return profile.displayName ? (
     <>
